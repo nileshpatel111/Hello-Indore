@@ -6,23 +6,9 @@ pipeline {
     }
 
     stages {
-        stage('clean_directory') {
-            steps {
-                //sh 'sudo sh /home/jenkins/myscripts/deletemyfirstpipeline.sh'
-                //sh 'rm -rf /home/jenkins/workspace/firstpipeline'
-                sh 'ansible-playbook /etc/ansible/my_yaml/cleanwebappartifact.yaml'
-                
-            }
-            /*steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh "exit 1"
-                }
-            }*/
-            
-        }
         stage('git_checkout') {
             steps {
-                git 'https://github.com/nileshpatel111/hello-world.git'
+                git 'https://github.com/nileshpatel111/Hello-Indore.git'
             }
         }
         stage('build_hello-world') {
